@@ -1,0 +1,51 @@
+[mysqld]
+#Phan bat buoc de cluster co the hoat dong
+binlog_format=ROW
+binlog_row_image=full
+default-storage-engine=innodb
+innodb_autoinc_lock_mode=2
+bind-address=0.0.0.0
+
+# Galera Provider Configuration
+wsrep_on=ON
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+wsrep_provider_options         = 'gcache.size = 2G'                  # Depends on you workload, WS kept for IST
+
+# Galera Cluster Configuration
+wsrep_cluster_name='galera_elc'
+wsrep_cluster_address='gcomm://10.10.68.141,10.10.68.142'         #private IP addresses 
+
+# Galera Synchronization Configuration
+# su dung khi 1 node duoc dua vao cluster
+wsrep_sst_method=rsync
+
+# Galera Node Configuration
+server_id=1
+wsrep_node_address='localhost'
+wsrep_node_name='SRV-1'
+
+#wsrep_notify_cmd=/usr/bin/my-wsrep-notify.sh
+
+# how many threads to use for applying slave writsets - cpu core * 2
+wsrep_slave_threads=32
+wsrep_provider_options="gcs.fc_limit=160;gcs.fc_factor=0.8"
+
+# change auto_increment_increment and auto_increment_offset automatically
+wsrep_auto_increment_control=1
+
+# enable "strictly synchronous" semantics for read operations
+wsrep_causal_reads=0
+
+# retry autoinc insert, which failed for duplicate key error
+wsrep_drupal_282555_workaround=1
+
+# Command to call when node status or cluster membership changes.
+# Will be passed all or some of the following options:
+# --status  - new status of this node
+# --uuid    - UUID of the cluster
+# --primary - whether the component is primary or not ("yes"/"no")
+# --members - comma-separated list of members
+# --index   - index of this node in the list
+#wsrep_notify_cmd=
+# how many times to retry deadlocked autocommits
+wsrep_retry_autocommit=2

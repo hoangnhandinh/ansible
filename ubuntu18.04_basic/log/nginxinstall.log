@@ -1,0 +1,218 @@
+Bắt đầu module NGHIX
+E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarily unavailable)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+Hit:1 http://vn.archive.ubuntu.com/ubuntu bionic InRelease
+Get:2 http://vn.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Hit:3 http://vn.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:4 http://vn.archive.ubuntu.com/ubuntu bionic-security InRelease
+Hit:5 http://releases.galeracluster.com/mysql-wsrep-5.7/ubuntu bionic InRelease
+Hit:6 http://releases.galeracluster.com/galera-3/ubuntu bionic InRelease
+Get:7 http://vn.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [3,032 kB]
+Get:8 http://vn.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1,908 kB]
+Fetched 5,029 kB in 5s (998 kB/s)
+Reading package lists...
+Failed to restart nginx.conf.service: Unit nginx.conf.service not found.
+Bắt đầu module NGHIX
+Reading package lists...
+Building dependency tree...
+Reading state information...
+nginx is already the newest version (1.14.0-0ubuntu1.11).
+The following packages were automatically installed and are no longer required:
+  libaio1 libmecab2 socat stunnel4
+Use 'apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
+Hit:1 http://vn.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://vn.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://vn.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Get:4 http://vn.archive.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+Hit:5 http://releases.galeracluster.com/mysql-wsrep-5.7/ubuntu bionic InRelease
+Hit:6 http://releases.galeracluster.com/galera-3/ubuntu bionic InRelease
+Fetched 88.7 kB in 1s (127 kB/s)
+Reading package lists...
+Failed to restart nginx.conf.service: Unit nginx.conf.service not found.
+Bắt đầu module NGHIX
+Reading package lists...
+Building dependency tree...
+Reading state information...
+nginx is already the newest version (1.14.0-0ubuntu1.11).
+The following packages were automatically installed and are no longer required:
+  apache2-bin apache2-data apache2-utils libaio1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap liblua5.2-0 libmecab2 socat stunnel4
+Use 'apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
+Hit:1 http://releases.galeracluster.com/mysql-wsrep-5.7/ubuntu bionic InRelease
+Hit:2 http://releases.galeracluster.com/galera-3/ubuntu bionic InRelease
+Hit:3 http://vn.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:4 http://vn.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Get:5 http://vn.archive.ubuntu.com/ubuntu bionic-backports InRelease [83.3 kB]
+Hit:6 http://vn.archive.ubuntu.com/ubuntu bionic-security InRelease
+Fetched 83.3 kB in 8s (10.3 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'apache2' is not installed, so not removed
+The following packages were automatically installed and are no longer required:
+  apache2-bin apache2-data apache2-utils libaio1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap liblua5.2-0 libmecab2 socat stunnel4
+Use 'apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2023-06-08 10:53:11 +07; 7ms ago
+     Docs: man:nginx(8)
+  Process: 9374 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 9387 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 9376 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 9391 (nginx)
+    Tasks: 67 (limit: 2204)
+   CGroup: /system.slice/nginx.service
+           ├─9391 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           ├─9392 nginx: worker process
+           └─9393 nginx: worker process
+
+Jun 08 10:53:11 Ubuntu91 systemd[1]: Starting A high performance web server and a reverse proxy server...
+Jun 08 10:53:11 Ubuntu91 systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+Jun 08 10:53:11 Ubuntu91 systemd[1]: Started A high performance web server and a reverse proxy server.
+Bắt đầu module NGHIX
+Reading package lists...
+Building dependency tree...
+Reading state information...
+nginx is already the newest version (1.14.0-0ubuntu1.11).
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
+2 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Setting up mysql-wsrep-server-5.7 (5.7.41-25.33-1ubuntu18.04) ...
+Skipping profile in /etc/apparmor.d/disable: usr.sbin.mysqld
+mysql.service is a disabled or a static unit, not starting it.
+dpkg: error processing package mysql-wsrep-server-5.7 (--configure):
+ installed mysql-wsrep-server-5.7 package post-installation script subprocess returned error exit status 1
+dpkg: dependency problems prevent configuration of mysql-wsrep-5.7:
+ mysql-wsrep-5.7 depends on mysql-wsrep-server-5.7 (= 5.7.41-25.33-1ubuntu18.04); however:
+  Package mysql-wsrep-server-5.7 is not configured yet.
+
+dpkg: error processing package mysql-wsrep-5.7 (--configure):
+ dependency problems - leaving unconfigured
+No apport report written because the error message indicates its a followup error from a previous failure.
+Errors were encountered while processing:
+ mysql-wsrep-server-5.7
+ mysql-wsrep-5.7
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+Hit:1 http://vn.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://vn.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://vn.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:4 http://vn.archive.ubuntu.com/ubuntu bionic-security InRelease
+Hit:5 http://releases.galeracluster.com/mysql-wsrep-5.7/ubuntu bionic InRelease
+Hit:6 http://releases.galeracluster.com/galera-3/ubuntu bionic InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'apache2' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
+2 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Setting up mysql-wsrep-server-5.7 (5.7.41-25.33-1ubuntu18.04) ...
+Skipping profile in /etc/apparmor.d/disable: usr.sbin.mysqld
+mysql.service is a disabled or a static unit, not starting it.
+dpkg: error processing package mysql-wsrep-server-5.7 (--configure):
+ installed mysql-wsrep-server-5.7 package post-installation script subprocess returned error exit status 1
+dpkg: dependency problems prevent configuration of mysql-wsrep-5.7:
+ mysql-wsrep-5.7 depends on mysql-wsrep-server-5.7 (= 5.7.41-25.33-1ubuntu18.04); however:
+  Package mysql-wsrep-server-5.7 is not configured yet.
+
+dpkg: error processing package mysql-wsrep-5.7 (--configure):
+ dependency problems - leaving unconfigured
+No apport report written because the error message indicates its a followup error from a previous failure.
+Errors were encountered while processing:
+ mysql-wsrep-server-5.7
+ mysql-wsrep-5.7
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2023-06-08 11:24:58 +07; 7ms ago
+     Docs: man:nginx(8)
+  Process: 20871 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 20884 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 20873 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 20896 (nginx)
+    Tasks: 3 (limit: 2204)
+   CGroup: /system.slice/nginx.service
+           ├─20896 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           ├─20897 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─20898 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+
+Jun 08 11:24:58 Ubuntu91 systemd[1]: Starting A high performance web server and a reverse proxy server...
+Jun 08 11:24:58 Ubuntu91 systemd[1]: Started A high performance web server and a reverse proxy server.
+[2023-06-08 17:21:54] Bắt đầu module NGINX
+Reading package lists...
+Building dependency tree...
+Reading state information...
+nginx is already the newest version (1.14.0-0ubuntu1.11).
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
+Hit:1 http://vn.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://vn.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://releases.galeracluster.com/mysql-wsrep-5.7/ubuntu bionic InRelease
+Hit:4 http://vn.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:5 http://vn.archive.ubuntu.com/ubuntu bionic-security InRelease
+Hit:6 http://releases.galeracluster.com/galera-3/ubuntu bionic InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'apache2' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2023-06-08 17:22:02 +07; 28ms ago
+     Docs: man:nginx(8)
+  Process: 23958 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 23973 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 23960 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 23981 (nginx)
+    Tasks: 67 (limit: 2204)
+   CGroup: /system.slice/nginx.service
+           ├─23981 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           ├─23982 nginx: worker process
+           └─23983 nginx: worker process
+
+Jun 08 17:22:02 Ubuntu91 systemd[1]: Starting A high performance web server and a reverse proxy server...
+Jun 08 17:22:02 Ubuntu91 systemd[1]: Started A high performance web server and a reverse proxy server.
+[2023-06-08 17:22:02] Ket thuc module NGINX
+[2023-06-16 11:13:10] Bắt đầu module NGINX
+Reading package lists...
+Building dependency tree...
+Reading state information...
+nginx is already the newest version (1.14.0-0ubuntu1.11).
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
+Hit:1 http://vn.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://vn.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://vn.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:4 http://vn.archive.ubuntu.com/ubuntu bionic-security InRelease
+Hit:5 https://download.docker.com/linux/ubuntu bionic InRelease
+Hit:6 http://releases.galeracluster.com/mysql-wsrep-5.7/ubuntu bionic InRelease
+Hit:7 http://releases.galeracluster.com/galera-3/ubuntu bionic InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Package 'apache2' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Fri 2023-06-16 11:13:19 +07; 16ms ago
+     Docs: man:nginx(8)
+  Process: 5590 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 5610 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 5591 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 5614 (nginx)
+    Tasks: 67 (limit: 2204)
+   CGroup: /system.slice/nginx.service
+           ├─5614 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           ├─5620 nginx: worker process
+           └─5621 nginx: worker process
+
+Jun 16 11:13:19 Ubuntu91 systemd[1]: Starting A high performance web server and a reverse proxy server...
+Jun 16 11:13:19 Ubuntu91 systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+Jun 16 11:13:19 Ubuntu91 systemd[1]: Started A high performance web server and a reverse proxy server.
+[2023-06-16 11:13:19] Ket thuc module NGINX

@@ -1,0 +1,16 @@
+Bắt đầu module Time
+./03-settimezone-nptd.sh: line 16: settimezone:: command not found
+Failed to restart ntp.conf.service: Unit ntp.conf.service not found.
+ntpq: read: Connection refused
+Bắt đầu module Time
+./03-settimezone-nptd.sh: line 16: settimezone:: command not found
+Failed to restart ntp.conf.service: Unit ntp.conf.service not found.
+ntpq: read: Connection refused
+Bắt đầu module Time
+./03-settimezone-nptd.sh: line 16: settimezone:: command not found
+Failed to restart ntp.conf.service: Unit ntp.conf.service not found.
+ntpq: read: Connection refused
+Bắt đầu module Time
+./03-settimezone-nptd.sh: line 16: settimezone:: command not found
+Failed to restart ntp.conf.service: Unit ntp.conf.service not found.
+ntpq: read: Connection refused
