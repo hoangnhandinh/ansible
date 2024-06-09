@@ -1,0 +1,12 @@
+[master]
+master-node ansible_host=10.12.22.91
+
+[workers]
+worker-node1 ansible_host=10.12.22.92
+worker-node2 ansible_host=10.12.22.93 
+
+[k8s:children]
+master
+workers
+
+

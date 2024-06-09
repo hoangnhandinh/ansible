@@ -1,0 +1,10 @@
+# site.yml
+# ansible-playbook site.yaml
+---
+- hosts: all
+  gather_facts: yes
+  become: yes
+
+  roles:
+    - k8s
+
