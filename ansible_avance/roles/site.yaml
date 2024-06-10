@@ -1,10 +1,33 @@
 # site.yml
 # ansible-playbook site.yaml
 ---
-- hosts: all
+# - hosts: all
+#   gather_facts: yes
+#   become: yes
+
+#   roles:
+#     - k8s
+
+- hosts: master
   gather_facts: yes
   become: yes
 
   roles:
-    - k8s
+    - jenkins
+
+- hosts: workers
+  gather_facts: yes
+  become: yes
+
+  tasks:
+    - name: Update apt cache again
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install fontconfig and OpenJDK 17
+      ansible.builtin.apt:
+        name: 
+          - fontconfig
+          - openjdk-17-jre
+        state: present
 

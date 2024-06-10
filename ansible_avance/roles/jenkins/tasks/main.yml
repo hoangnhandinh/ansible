@@ -1,0 +1,42 @@
+---
+- name: Download Jenkins keyring
+  ansible.builtin.get_url:
+    url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+    dest: /usr/share/keyrings/jenkins-keyring.asc
+    mode: '0644'
+    validate_certs: no
+
+- name: Add Jenkins repository
+  ansible.builtin.apt_repository:
+    repo: "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/"
+    state: present
+
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install Jenkins
+  ansible.builtin.apt:
+    name: jenkins
+    state: present
+
+- name: Update apt cache again
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install fontconfig and OpenJDK 17
+  ansible.builtin.apt:
+    name: 
+      - fontconfig
+      - openjdk-17-jre
+    state: present
+
+- name: Ensure Jenkins is enabled on boot
+  ansible.builtin.systemd:
+    name: jenkins
+    enabled: yes
+
+- name: Start Jenkins service
+  ansible.builtin.systemd:
+    name: jenkins
+    state: started
