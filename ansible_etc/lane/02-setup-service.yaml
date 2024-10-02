@@ -1,0 +1,40 @@
+---
+- hosts: lab
+  become: true
+  tasks:
+    - name: Update APT package index
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install required packages
+      ansible.builtin.apt:
+        name:
+          - xvfb
+          - net-tools
+          - telnet
+          - cron
+          - gdb
+          - gnome-shell-extension-autohidetopbar
+          - curl
+          - ntp
+          - ntpdate
+          - traceroute
+          - mysql-server
+          - vlc
+          - snapd
+          - pktstat
+        state: present
+    - name: Copy install.sh to remote node
+      copy:
+        src: install.sh
+        dest: /home/its/
+        mode: '0755'
+
+    - name: Run install.sh
+      shell: /home/its/install.sh
+
+    - name: Copy install.sh to remote node
+      copy:
+        src: environment
+        dest: /etc/
+        mode: '0755'
