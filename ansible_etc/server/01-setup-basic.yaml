@@ -1,0 +1,46 @@
+---
+- hosts: server
+  become: true
+  tasks:
+    - name: Disable UFW firewall
+      ansible.builtin.command:
+        cmd: ufw disable
+
+    - name: Install Vim
+      ansible.builtin.apt:
+        name: vim
+        state: present
+        update_cache: yes
+
+    - name: Configure nameserver in /etc/resolv.conf
+      ansible.builtin.lineinfile:
+        path: /etc/resolv.conf
+        regexp: '^nameserver'
+        line: 'nameserver 8.8.8.8'
+        state: present
+
+    - name: Install OpenSSH server
+      ansible.builtin.apt:
+        name: openssh-server
+        state: present
+        update_cache: yes
+
+    - name: Update sshd_config for Port 22 and PermitRootLogin
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?Port'
+        line: 'Port 22'
+        state: present
+
+    - name: Enable PermitRootLogin in sshd_config
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PermitRootLogin'
+        line: 'PermitRootLogin yes'
+        state: present
+
+    - name: Restart SSH service to apply changes
+      ansible.builtin.service:
+        name: ssh
+        state: restarted
+

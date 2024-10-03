@@ -1,0 +1,15 @@
+[server]
+server1 ansible_host=192.168.1.130 #10.12.65.141
+server2 ansible_host=192.168.1.145 #10.12.65.142
+server3 ansible_host=192.168.1.110 #10.12.65.143
+
+[lane]
+lane1 ansible_host=10.12.23.51
+lane2 ansible_host=10.12.23.52
+
+[lab]
+ubuntu-lab ansible_host=10.12.22.94
+
+[linux:children]
+server
+lane

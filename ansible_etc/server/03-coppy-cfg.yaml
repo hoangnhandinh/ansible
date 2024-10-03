@@ -1,0 +1,42 @@
+---
+- hosts: server
+  become: true
+  tasks:
+
+    - name: Coppy cfg keepalived
+      copy:
+        src: keepalived.conf
+        dest: /etc/keepalived/
+        mode: '0755'
+
+    - name: Coppy cfg nginx
+      copy:
+        src: nginx.conf
+        dest: etc/nginx/conf.d/
+        mode: '0755'
+
+    - name: Coppy cfg ntp
+      copy:
+        src: ntp.conf
+        dest: etc/
+        mode: '0755'
+    
+    - name: Restart ntp service
+      ansible.builtin.systemd:
+        name: ntp
+        state: restarted
+
+    - name: Restart cron service
+      ansible.builtin.systemd:
+        name: cron
+        state: restarted
+
+    - name: Restart nginx service
+      ansible.builtin.systemd:
+        name: nginx
+        state: restarted
+
+    - name: Restart keepalived service
+      ansible.builtin.systemd:
+        name: keepalived
+        state: restarted
