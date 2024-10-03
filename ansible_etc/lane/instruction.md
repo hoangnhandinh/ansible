@@ -1,3 +1,9 @@
+Install ansible on master node
+sudo apt update
+sudo apt install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+
 Grant root priviledge to ansible user
 sudo bash -c 'echo "its ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/its'
 
